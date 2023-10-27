@@ -1,0 +1,95 @@
+@font-face {
+    font-family: 'Benzin';
+    src: url('../fonts/Benzin-Semibold.ttf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Benzin';
+    src: url('../fonts/Benzin-Regular.ttf');
+    font-weight: 400;
+}
+
+@keyframes jumpingLetter {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-40%);
+    }
+}
+
+@keyframes shakingLetter {
+    from {
+        rotate: 0;
+    }
+
+    to {
+        rotate: -5deg;
+    }
+}
+
+:root {
+    --clr-bg: #FAFDF2;
+    --clr-txt: #333333;
+    --clr-headings: #262626;
+    --clr-darkgreen: #1A3129;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Benzin';
+    min-height: 100vh;
+    font-size: 16px;
+    background: var(--clr-bg);
+    color: var(--clr-txt);
+}
+
+.block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 2rem;
+    height: 100vh;
+    background: red;
+
+    &:nth-child(2) {
+        background: green;
+    }
+
+    &:nth-child(3) {
+        background: blue;
+    }
+
+    &:last-of-type {
+        background: green;
+    }
+}
+
+a.github {
+    --clr-shadow: rgba(rgb(255, 255, 255), .5);
+    font-family: 'Benzin';
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    text-shadow: 0 2px 15px var(--clr-shadow);
+    display: none;
+    transition: ease-in-out;
+}
+
+a.github:hover {
+    --clr-shadow: rgba(var(--clr-darkgreen), .5);
+    color: rgb(var(--clr-darkgreen));
+}
